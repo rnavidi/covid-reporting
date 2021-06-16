@@ -23,10 +23,6 @@
 			"type": "string",
 			"defaultValue": "https://raw.githubusercontent.com"
 		},
-		"tr_ingest_population_data_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/1a956d9a-b191-4eec-9f78-a51d5f47b419/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/covidreportingsa30"
-		},
 		"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_SourceRelativeURL": {
 			"type": "string",
 			"defaultValue": "cloudboxacademy/covid19/main/ecdc_data/hospital_admissions.csv"
@@ -34,6 +30,10 @@
 		"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_SinkFileName": {
 			"type": "string",
 			"defaultValue": "hospitals_admissions.csv"
+		},
+		"tr_ingest_population_data_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/1a956d9a-b191-4eec-9f78-a51d5f47b419/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/covidreportingsa30"
 		},
 		"containerUri": {
 			"type": "string",
@@ -74,14 +74,14 @@
 					"ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url": {
 						"value": "[parameters('ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url')]"
 					},
-					"tr_ingest_population_data_properties_typeProperties_scope": {
-						"value": "[parameters('tr_ingest_population_data_properties_typeProperties_scope')]"
-					},
 					"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_SourceRelativeURL": {
 						"value": "[parameters('tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_SourceRelativeURL')]"
 					},
 					"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_SinkFileName": {
 						"value": "[parameters('tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_SinkFileName')]"
+					},
+					"tr_ingest_population_data_properties_typeProperties_scope": {
+						"value": "[parameters('tr_ingest_population_data_properties_typeProperties_scope')]"
 					}
 				}
 			},
