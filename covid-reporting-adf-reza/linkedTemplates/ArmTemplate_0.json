@@ -21,7 +21,7 @@
 		},
 		"ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://raw.githubusercontent.com"
+			"defaultValue": "@{linkedService().SourceBaseURL}"
 		},
 		"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_SourceRelativeURL": {
 			"type": "string",
@@ -75,6 +75,11 @@
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"parameters": {
+					"SourceBaseURL": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "HttpServer",
 				"typeProperties": {
@@ -163,10 +168,19 @@
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "ls_http_opendata_ecdc_europa_eu",
-					"type": "LinkedServiceReference"
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"SourceBaseURL": {
+							"value": "@dataset().BaseURL",
+							"type": "Expression"
+						}
+					}
 				},
 				"parameters": {
 					"RelativeURL": {
+						"type": "string"
+					},
+					"BaseURL": {
 						"type": "string"
 					}
 				},
@@ -308,6 +322,10 @@
 									"RelativeURL": {
 										"value": "@pipeline().parameters.SourceRelativeURL",
 										"type": "Expression"
+									},
+									"BaseURL": {
+										"value": "@pipeline().parameters.SourceBaseURL",
+										"type": "Expression"
 									}
 								}
 							}
@@ -331,6 +349,9 @@
 						"type": "string"
 					},
 					"SinkFileName": {
+						"type": "string"
+					},
+					"SourceBaseURL": {
 						"type": "string"
 					}
 				},

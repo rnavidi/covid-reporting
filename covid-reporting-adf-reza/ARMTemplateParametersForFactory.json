@@ -15,7 +15,7 @@
 			"value": "https://covidreportingdl30.dfs.core.windows.net"
 		},
 		"ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url": {
-			"value": "https://raw.githubusercontent.com"
+			"value": "@{linkedService().SourceBaseURL}"
 		},
 		"tr_ingest_hospital_admissions_data_properties_pl_ingest_ecdc_data_parameters_SourceRelativeURL": {
 			"value": "cloudboxacademy/covid19/main/ecdc_data/hospital_admissions.csv"
